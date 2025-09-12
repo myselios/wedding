@@ -24,7 +24,7 @@ export const weddingConfig = {
   main: {
     title: "Wedding Invitation",
     image: "/images/main.jpg",
-    date: "2025년 11월 8일 토요일 1시 ",
+    date: "2025년 11월 8일 토요일 오후 1시 ",
     venue: "경주 더프라미스 웨딩홀",
   },
 
@@ -121,8 +121,8 @@ export const weddingConfig = {
       mother: "이영애",
     },
     bride: {
-      name: "신부이름",
-      label: "박은혜",
+      name: "박은혜",
+      label: "딸",
       father: "박상의",
       mother: "이미애",
     },

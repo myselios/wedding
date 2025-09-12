@@ -15,7 +15,7 @@ export const weddingConfig = {
   meta: {
     title: "신랑 ❤️ 신부의 결혼식에 초대합니다",
     description: "결혼식 초대장",
-    ogImage: "/images/ha0h-1fsi-bqt3.jpg",
+    ogImage: "/images/main.jpg",
     noIndex: true,
     _jwk_watermark_id: uniqueIdentifier,
   },
@@ -23,63 +23,63 @@ export const weddingConfig = {
   // 메인 화면
   main: {
     title: "Wedding Invitation",
-    image: "/images/ha0h-1fsi-bqt3.jpg",
-    date: "2026년 5월 16일 토요일 12시 30분",
-    venue: "웨딩홀 이름"
+    image: "/images/main.jpg",
+    date: "2025년 11월 8일 토요일 1시 ",
+    venue: "경주 더프라미스 웨딩홀",
   },
 
   // 소개글
   intro: {
     title: "",
-    text: "서로를 바라보며 걸어온\n소중한 발걸음이\n이제 하나의 길로 이어집니다.\n\n사랑과 믿음으로\n새 가정을 이루는 저희 두 사람의\n작은 시작을 알려드립니다."
+    text: "서로를 바라보며 걸어온\n소중한 발걸음이\n이제 하나의 길로 이어집니다.\n\n사랑과 믿음으로\n새 가정을 이루는 저희 두 사람의\n작은 시작을 알려드립니다.",
   },
 
   // 결혼식 일정
   date: {
-    year: 2026,
-    month: 5,
-    day: 16,
-    hour: 12,
-    minute: 30,
-    displayDate: "2026.05.16 SAT PM 12:30",
+    year: 2025,
+    month: 11,
+    day: 8,
+    hour: 13,
+    minute: 0,
+    displayDate: "2025.11.08 SAT PM 1:00",
   },
 
   // 장소 정보
+  //https://map.naver.com/p/entry/place/1040777321?c=15.99,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202509121606&locale=ko&svcName=map_pcv5
   venue: {
-    name: "웨딩홀 이름",
-    address: "서울특별시 강남구 테헤란로 123\n웨딩홀 이름",
-    tel: "02-1234-5678",
-    naverMapId: "웨딩홀 이름", // 네이버 지도 검색용 장소명
+    name: "더프라미스 웨딩홀",
+    address: "경북 경주시 보불로 391\n 룩스타워워 6층",
+    tel: "0507-1387-9237",
+    naverMapId: "더 프라미스 웨딩 컨벤션", // 네이버 지도 검색용 장소명
     coordinates: {
-      latitude: 37.5665,
-      longitude: 126.9780,
+      latitude: 35.8250959,
+      longitude: 129.2908045,
     },
-    placeId: "123456789", // 네이버 지도 장소 ID
+    placeId: "1040777321", // 네이버 지도 장소 ID
     mapZoom: "17", // 지도 줌 레벨
-    mapNaverCoordinates: "14141300,4507203,15,0,0,0,dh", // 네이버 지도 길찾기 URL용 좌표 파라미터 (구 형식)
+    mapNaverCoordinates: "129.2908045,35.8250959,15,0,0,0,dh", // 네이버 지도 길찾기 URL용 좌표 파라미터 (경주시 보불로 391)
     transportation: {
-      subway: "지하철역 1번 출구에서 도보 5분",
-      bus: "간선\n 101, 102, 103\n지선\n 1234, 5678",
+      bus: "강동워터파크 맞은 편 룩스타워 6F",
     },
-    parking: "건물 지하 주차장 이용 가능 (2시간 무료)",
+    parking: "건물 주차장(2~5F) 이용 가능",
     // 신랑측 배차 안내
-    groomShuttle: {
+    /*groomShuttle: {
       location: "신랑측 배차 출발지",
       departureTime: "오전 10시 30분 출발",
       contact: {
         name: "담당자명",
-        tel: "010-1234-5678"
-      }
-    },
+        tel: "010-1234-5678",
+      },
+    },map.getCenter().toString());
     // 신부측 배차 안내
     brideShuttle: {
       location: "신부측 배차 출발지",
       departureTime: "오전 11시 출발",
       contact: {
         name: "담당자명",
-        tel: "010-9876-5432"
-      }
-    }
+        tel: "010-9876-5432",
+      },
+    },*/
   },
 
   // 갤러리
@@ -87,67 +87,79 @@ export const weddingConfig = {
     layout: "grid" as GalleryLayout, // "scroll" 또는 "grid" 선택
     position: "bottom" as GalleryPosition, // "middle" (현재 위치) 또는 "bottom" (맨 하단) 선택
     images: [
-      "/images/gallery/image1.jpg",
-      "/images/gallery/image2.jpg",
-      "/images/gallery/image3.jpg",
-      "/images/gallery/image4.jpg",
-      "/images/gallery/image5.jpg",
-      "/images/gallery/image6.jpg",
-      "/images/gallery/image7.jpg",
-      "/images/gallery/image8.jpg",
-      "/images/gallery/image9.jpg",
+      "/images/gallery/1.jpg",
+      "/images/gallery/2.jpg",
+      "/images/gallery/3.jpg",
+      "/images/gallery/4.jpg",
+      "/images/gallery/5.jpg",
+      "/images/gallery/6.jpg",
+      "/images/gallery/7.jpg",
+      "/images/gallery/8.jpg",
+      "/images/gallery/9.jpg",
+      "/images/gallery/10.jpg",
+      "/images/gallery/11.jpg",
+      "/images/gallery/12.jpg",
+      "/images/gallery/13.jpg",
+      "/images/gallery/14.jpg",
+      "/images/gallery/15.jpg",
+      "/images/gallery/16.jpg",
+      "/images/gallery/17.jpg",
+      "/images/gallery/18.jpg",
+      "/images/gallery/19.jpg",
+      "/images/gallery/20.jpg",
     ],
   } as GalleryConfig,
 
   // 초대의 말씀
   invitation: {
-    message: "한 줄기 별빛이 되어 만난 인연\n평생을 함께 걸어가려 합니다.\n\n소중한 분들의 축복 속에\n저희 두 사람이 첫 걸음을 내딛습니다.\n\n귀한 시간 내어 함께해 주신다면\n그 어떤 축복보다 값진 선물이 될 것입니다.",
+    message:
+      "한 줄기 별빛이 되어 만난 인연\n평생을 함께 걸어가려 합니다.\n\n소중한 분들의 축복 속에\n저희 두 사람이 첫 걸음을 내딛습니다.\n\n귀한 시간 내어 함께해 주신다면\n그 어떤 축복보다 값진 선물이 될 것입니다.",
     groom: {
-      name: "신랑이름",
+      name: "박동건",
       label: "아들",
-      father: "신랑아버지",
-      mother: "신랑어머니",
+      father: "박태윤",
+      mother: "이영애",
     },
     bride: {
       name: "신부이름",
-      label: "딸",
-      father: "신부아버지",
-      mother: "신부어머니",
+      label: "박은혜",
+      father: "박상의",
+      mother: "이미애",
     },
   },
 
   // 계좌번호
   account: {
     groom: {
-      bank: "은행명",
-      number: "123-456-789012",
-      holder: "신랑이름",
+      bank: "카카오뱅크",
+      number: "3333-02-04431819",
+      holder: "",
     },
     bride: {
       bank: "은행명",
       number: "987-654-321098",
-      holder: "신부이름",
+      holder: "",
     },
     groomFather: {
-      bank: "은행명",
-      number: "111-222-333444",
-      holder: "신랑아버지",
+      bank: "농협",
+      number: "721110-52-053695",
+      holder: "",
     },
     groomMother: {
-      bank: "은행명",
-      number: "555-666-777888",
-      holder: "신랑어머니",
+      bank: "농협",
+      number: "721110-52-053695",
+      holder: "",
     },
     brideFather: {
       bank: "은행명",
       number: "999-000-111222",
-      holder: "신부아버지",
+      holder: "",
     },
     brideMother: {
       bank: "은행명",
       number: "333-444-555666",
-      holder: "신부어머니",
-    }
+      holder: "",
+    },
   },
 
   // RSVP 설정
@@ -162,4 +174,4 @@ export const weddingConfig = {
     channel: "#wedding-response",
     compactMessage: true, // 슬랙 메시지를 간결하게 표시
   },
-}; 
+};

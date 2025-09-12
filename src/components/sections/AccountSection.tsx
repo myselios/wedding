@@ -1,18 +1,24 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { weddingConfig } from '../../config/wedding-config';
-import { AccountInfo } from '../../types/wedding';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { weddingConfig } from "../../config/wedding-config";
+import { AccountInfo } from "../../types/wedding";
 
-type AccountPerson = 'groom' | 'bride' | 'groomFather' | 'groomMother' | 'brideFather' | 'brideMother';
-type AccountSide = 'groom' | 'bride';
+type AccountPerson =
+  | "groom"
+  | "bride"
+  | "groomFather"
+  | "groomMother"
+  | "brideFather"
+  | "brideMother";
+type AccountSide = "groom" | "bride";
 
 interface AccountSectionProps {
-  bgColor?: 'white' | 'beige';
+  bgColor?: "white" | "beige";
 }
 
-const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
+const AccountSection = ({ bgColor = "white" }: AccountSectionProps) => {
   const [copyStatus, setCopyStatus] = useState<Record<AccountPerson, boolean>>({
     groom: false,
     bride: false,
@@ -21,7 +27,7 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
     brideFather: false,
     brideMother: false,
   });
-  
+
   // URL 복사 상태 관리
   const [urlCopied, setUrlCopied] = useState(false);
 
@@ -45,11 +51,11 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
         }, 2000);
       },
       (err) => {
-        console.error('계좌번호 복사 실패:', err);
+        console.error("계좌번호 복사 실패:", err);
       }
     );
   };
-  
+
   // URL 복사 함수
   const copyWebsiteUrl = () => {
     const url = window.location.href;
@@ -61,11 +67,11 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
         }, 2000);
       },
       (err) => {
-        console.error('URL 복사 실패:', err);
+        console.error("URL 복사 실패:", err);
       }
     );
   };
-  
+
   // 웹 공유 API를 사용한 공유 함수
   const shareWebsite = async () => {
     const shareData = {
@@ -73,45 +79,51 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
       text: `${weddingConfig.invitation.groom.name} ♥ ${weddingConfig.invitation.bride.name}의 결혼식에 초대합니다`,
       url: window.location.href,
     };
-    
+
     try {
       if (navigator.share) {
         await navigator.share(shareData);
       } else {
         // 공유 API를 지원하지 않는 경우 URL 복사로 대체
         copyWebsiteUrl();
-        alert('이 브라우저는 공유 기능을 지원하지 않습니다. URL이 복사되었습니다.');
+        alert(
+          "이 브라우저는 공유 기능을 지원하지 않습니다. URL이 복사되었습니다."
+        );
       }
     } catch (error) {
-      console.error('공유 실패:', error);
+      console.error("공유 실패:", error);
     }
   };
 
   // 각 인물에 해당하는 이름 가져오기
   const getPersonName = (person: AccountPerson): string => {
-    switch(person) {
-      case 'groom':
+    switch (person) {
+      case "groom":
         return weddingConfig.invitation.groom.name;
-      case 'bride':
+      case "bride":
         return weddingConfig.invitation.bride.name;
-      case 'groomFather':
+      case "groomFather":
         return weddingConfig.invitation.groom.father;
-      case 'groomMother':
+      case "groomMother":
         return weddingConfig.invitation.groom.mother;
-      case 'brideFather':
+      case "brideFather":
         return weddingConfig.invitation.bride.father;
-      case 'brideMother':
+      case "brideMother":
         return weddingConfig.invitation.bride.mother;
       default:
-        return '';
+        return "";
     }
   };
 
   // 개별 계좌 정보 행 렌더링
-  const renderAccountRow = (accountInfo: AccountInfo, person: AccountPerson, title: string) => {
+  const renderAccountRow = (
+    accountInfo: AccountInfo,
+    person: AccountPerson,
+    title: string
+  ) => {
     // 계좌 소유자 이름이 비어있는 경우 null 반환하여 렌더링하지 않음
     const personName = getPersonName(person);
-    if (!personName || personName.trim() === '') {
+    if (!personName || personName.trim() === "") {
       return null;
     }
 
@@ -124,9 +136,7 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
 
     return (
       <AccountRow>
-        <AccountRowTitle>
-          {title}
-        </AccountRowTitle>
+        <AccountRowTitle>{title}</AccountRowTitle>
         <AccountRowInfo>
           <AccountBank>{bankText}</AccountBank>
           <AccountNumber>{numberAndHolder}</AccountNumber>
@@ -137,7 +147,7 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
             copyToClipboard(copyText, person);
           }}
         >
-          {copyStatus[person] ? '복사 완료' : '복사'}
+          {copyStatus[person] ? "복사 완료" : "복사"}
         </CopyButton>
       </AccountRow>
     );
@@ -146,49 +156,65 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
   return (
     <AccountSectionContainer $bgColor={bgColor}>
       <SectionTitle>마음 전하실 곳</SectionTitle>
-      
+
       <AccountCards>
         {/* 신랑측 계좌 카드 */}
-        <AccountCard onClick={() => toggleSide('groom')}>
-          <AccountCardHeader $isExpanded={expandedSide === 'groom'}>
+        <AccountCard onClick={() => toggleSide("groom")}>
+          <AccountCardHeader $isExpanded={expandedSide === "groom"}>
             <GroupTitle>신랑 측 계좌번호</GroupTitle>
-            <ExpandIcon $isExpanded={expandedSide === 'groom'}>
-              {expandedSide === 'groom' ? '−' : '+'}
+            <ExpandIcon $isExpanded={expandedSide === "groom"}>
+              {expandedSide === "groom" ? "−" : "+"}
             </ExpandIcon>
           </AccountCardHeader>
-          
-          {expandedSide === 'groom' && (
+
+          {expandedSide === "groom" && (
             <AccountRowsContainer>
-              {renderAccountRow(weddingConfig.account.groom, 'groom', '신랑')}
-              {renderAccountRow(weddingConfig.account.groomFather, 'groomFather', '아버지')}
-              {renderAccountRow(weddingConfig.account.groomMother, 'groomMother', '어머니')}
+              {renderAccountRow(weddingConfig.account.groom, "groom", "신랑")}
+              {renderAccountRow(
+                weddingConfig.account.groomFather,
+                "groomFather",
+                "아버지"
+              )}
+              {renderAccountRow(
+                weddingConfig.account.groomMother,
+                "groomMother",
+                "어머니"
+              )}
             </AccountRowsContainer>
           )}
         </AccountCard>
-        
+
         {/* 신부측 계좌 카드 */}
-        <AccountCard onClick={() => toggleSide('bride')}>
-          <AccountCardHeader $isExpanded={expandedSide === 'bride'}>
+        <AccountCard onClick={() => toggleSide("bride")}>
+          <AccountCardHeader $isExpanded={expandedSide === "bride"}>
             <GroupTitle>신부 측 계좌번호</GroupTitle>
-            <ExpandIcon $isExpanded={expandedSide === 'bride'}>
-              {expandedSide === 'bride' ? '−' : '+'}
+            <ExpandIcon $isExpanded={expandedSide === "bride"}>
+              {expandedSide === "bride" ? "−" : "+"}
             </ExpandIcon>
           </AccountCardHeader>
-          
-          {expandedSide === 'bride' && (
+
+          {expandedSide === "bride" && (
             <AccountRowsContainer>
-              {renderAccountRow(weddingConfig.account.bride, 'bride', '신부')}
-              {renderAccountRow(weddingConfig.account.brideFather, 'brideFather', '아버지')}
-              {renderAccountRow(weddingConfig.account.brideMother, 'brideMother', '어머니')}
+              {renderAccountRow(weddingConfig.account.bride, "bride", "신부")}
+              {renderAccountRow(
+                weddingConfig.account.brideFather,
+                "brideFather",
+                "아버지"
+              )}
+              {renderAccountRow(
+                weddingConfig.account.brideMother,
+                "brideMother",
+                "어머니"
+              )}
             </AccountRowsContainer>
           )}
         </AccountCard>
       </AccountCards>
-      
+
       {/* 청첩장 공유하기 버튼 */}
       <ShareContainer>
         <ShareButton onClick={copyWebsiteUrl}>
-          {urlCopied ? '복사 완료!' : 'URL 복사하기'}
+          {urlCopied ? "복사 완료!" : "URL 복사하기"}
         </ShareButton>
         <ShareButton onClick={shareWebsite} $isShare={true}>
           공유하기
@@ -198,10 +224,11 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
   );
 };
 
-const AccountSectionContainer = styled.section<{ $bgColor: 'white' | 'beige' }>`
+const AccountSectionContainer = styled.section<{ $bgColor: "white" | "beige" }>`
   padding: 4rem 1.5rem;
   text-align: center;
-  background-color: ${props => props.$bgColor === 'beige' ? '#F8F6F2' : 'white'};
+  background-color: ${(props) =>
+    props.$bgColor === "beige" ? "#F8F6F2" : "white"};
 `;
 
 const SectionTitle = styled.h2`
@@ -210,9 +237,9 @@ const SectionTitle = styled.h2`
   margin-bottom: 2rem;
   font-weight: 500;
   font-size: 1.5rem;
-  
+
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -16px;
     left: 50%;
@@ -235,14 +262,14 @@ const AccountCards = styled.div`
 const AccountCard = styled.div`
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   cursor: pointer;
   transition: all 0.2s ease;
-  
+
   &:hover {
-    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -251,7 +278,7 @@ const AccountCardHeader = styled.div<{ $isExpanded: boolean }>`
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem;
-  border-bottom: ${props => props.$isExpanded ? '1px solid #eee' : 'none'};
+  border-bottom: ${(props) => (props.$isExpanded ? "1px solid #eee" : "none")};
 `;
 
 const GroupTitle = styled.h3`
@@ -268,7 +295,8 @@ const ExpandIcon = styled.span<{ $isExpanded: boolean }>`
   line-height: 1;
   color: var(--secondary-color);
   transition: transform 0.3s ease;
-  transform: ${props => props.$isExpanded ? 'rotate(0deg)' : 'rotate(0deg)'};
+  transform: ${(props) =>
+    props.$isExpanded ? "rotate(0deg)" : "rotate(0deg)"};
 `;
 
 const AccountRowsContainer = styled.div`
@@ -281,7 +309,7 @@ const AccountRow = styled.div`
   align-items: center;
   padding: 1rem 1.25rem;
   border-bottom: 1px solid #f5f5f5;
-  
+
   &:last-child {
     border-bottom: none;
   }
@@ -367,18 +395,19 @@ const CopyButton = styled.button`
   margin-left: 0.5rem;
   position: relative;
   overflow: hidden;
-  
-  &:hover, &:active {
+
+  &:hover,
+  &:active {
     background-color: var(--secondary-color);
     color: white;
   }
-  
+
   &:active {
     transform: translateY(1px);
   }
-  
+
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -390,11 +419,11 @@ const CopyButton = styled.button`
     transform: scale(1, 1) translate(-50%);
     transform-origin: 50% 50%;
   }
-  
+
   &:active:after {
     animation: ripple 0.6s ease-out;
   }
-  
+
   @keyframes ripple {
     0% {
       transform: scale(0, 0);
@@ -429,21 +458,21 @@ const ShareButton = styled.button<{ $isShare?: boolean }>`
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   flex: 1;
   max-width: 180px;
-  
+
   &:hover {
     background-color: #c4a986;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   }
-  
+
   &:active {
     transform: translateY(1px);
   }
-  
+
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -455,10 +484,10 @@ const ShareButton = styled.button<{ $isShare?: boolean }>`
     transform: scale(1, 1) translate(-50%);
     transform-origin: 50% 50%;
   }
-  
+
   &:active:after {
     animation: ripple 0.6s ease-out;
   }
 `;
 
-export default AccountSection; 
+export default AccountSection;

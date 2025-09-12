@@ -15,7 +15,7 @@ export const weddingConfig = {
   meta: {
     title: "동건 ❤️ 은혜의 결혼식에 초대합니다",
     description: "결혼식 초대장",
-    ogImage: "/images/meta.jpg",
+    ogImage: "/images/main_2.jpg",
     noIndex: true,
     _jwk_watermark_id: uniqueIdentifier,
   },
@@ -23,7 +23,7 @@ export const weddingConfig = {
   // 메인 화면
   main: {
     title: "",
-    image: "/images/meta.jpg",
+    image: "/images/main_2.jpg",
     date: "2025년 11월 8일 토요일 오후 1시 ",
     venue: "경주 더프라미스 웨딩홀",
   },

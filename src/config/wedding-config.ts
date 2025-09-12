@@ -13,17 +13,17 @@ interface GalleryConfig {
 export const weddingConfig = {
   // 메타 정보
   meta: {
-    title: "신랑 ❤️ 신부의 결혼식에 초대합니다",
+    title: "동건 ❤️ 은혜의 결혼식에 초대합니다",
     description: "결혼식 초대장",
-    ogImage: "/images/main.jpg",
+    ogImage: "/images/meta.jpg",
     noIndex: true,
     _jwk_watermark_id: uniqueIdentifier,
   },
 
   // 메인 화면
   main: {
-    title: "Wedding Invitation",
-    image: "/images/main.jpg",
+    title: "",
+    image: "/images/meta.jpg",
     date: "2025년 11월 8일 토요일 오후 1시 ",
     venue: "경주 더프라미스 웨딩홀",
   },
@@ -113,7 +113,7 @@ export const weddingConfig = {
   // 초대의 말씀
   invitation: {
     message:
-      "한 줄기 별빛이 되어 만난 인연\n평생을 함께 걸어가려 합니다.\n\n소중한 분들의 축복 속에\n저희 두 사람이 첫 걸음을 내딛습니다.\n\n귀한 시간 내어 함께해 주신다면\n그 어떤 축복보다 값진 선물이 될 것입니다.",
+      "11월 어느 멋진날, 저희 결혼합니다.\n\n 함께하던 작은 일상이 일생이 되는날,\n 나란히 같은 곳을 보고 걸으며 지금처럼 예쁘게 살아가겠습니다.\n\n 우리라는 이름의 첫 시작, \n 그 설렘의 순간에 소중한 분들을 초대합니다.",
     groom: {
       name: "박동건",
       label: "아들",

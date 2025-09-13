@@ -136,8 +136,8 @@ export const weddingConfig = {
       holder: "",
     },
     bride: {
-      bank: "은행명",
-      number: "987-654-321098",
+      bank: "하나은행",
+      number: "211-910375-27407",
       holder: "",
     },
     groomFather: {
@@ -151,13 +151,13 @@ export const weddingConfig = {
       holder: "",
     },
     brideFather: {
-      bank: "은행명",
-      number: "999-000-111222",
+      bank: "하나은행",
+      number: "903-910039-96807",
       holder: "",
     },
     brideMother: {
-      bank: "은행명",
-      number: "333-444-555666",
+      bank: "하나은행",
+      number: "620-1610-13178",
       holder: "",
     },
   },

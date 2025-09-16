@@ -48,7 +48,7 @@ export const weddingConfig = {
   //https://map.naver.com/p/entry/place/1040777321?c=15.99,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202509121606&locale=ko&svcName=map_pcv5
   venue: {
     name: "더프라미스 웨딩홀",
-    address: "경북 경주시 보불로 391\n 룩스타워워 6층",
+    address: "경북 경주시 보불로 391\n 룩스타워 6층",
     tel: "0507-1387-9237",
     naverMapId: "더 프라미스 웨딩 컨벤션", // 네이버 지도 검색용 장소명
     coordinates: {
@@ -59,7 +59,7 @@ export const weddingConfig = {
     mapZoom: "17", // 지도 줌 레벨
     mapNaverCoordinates: "129.2908045,35.8250959,15,0,0,0,dh", // 네이버 지도 길찾기 URL용 좌표 파라미터 (경주시 보불로 391)
     transportation: {
-      bus: "강동워터파크 맞은 편 룩스타워 6F",
+      bus: "셔틀버스 KTX 경주역 ⇄ 웨딩홀 \n - 가는편: 오후 12:00 \n - 오는편: 오후 2:30",
     },
     parking: "건물 주차장(2~5F) 이용 가능",
     // 신랑측 배차 안내

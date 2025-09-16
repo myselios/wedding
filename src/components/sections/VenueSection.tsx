@@ -262,7 +262,7 @@ const VenueSection = ({ bgColor = "white" }: VenueSectionProps) => {
       </NavigateButtonsContainer>
 
       <TransportCard>
-        <CardTitle>오시는길</CardTitle>
+        <CardTitle>교통 안내</CardTitle>
         <TransportItem>
           <TransportLabel></TransportLabel>
           <TransportText>

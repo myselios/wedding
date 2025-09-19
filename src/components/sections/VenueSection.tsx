@@ -477,7 +477,7 @@ const TransportLabel = styled.p`
 const TransportText = styled.p`
   font-size: 0.875rem;
   color: var(--text-medium);
-  white-space: pre-line;
+  white-space: pre-wrap;
 `;
 
 const ShuttleInfo = styled.div`

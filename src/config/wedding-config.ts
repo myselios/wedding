@@ -15,7 +15,7 @@ export const weddingConfig = {
   meta: {
     title: "동건 ❤️ 은혜의 결혼식에 초대합니다",
     description: "결혼식 초대장",
-    ogImage: "/images/main_2.jpg",
+    ogImage: "/images/main_3.jpg",
     noIndex: true,
     _jwk_watermark_id: uniqueIdentifier,
   },
@@ -23,7 +23,7 @@ export const weddingConfig = {
   // 메인 화면
   main: {
     title: "",
-    image: "/images/main_2.jpg",
+    image: "/images/main_3.jpg",
     date: "2025년 11월 8일 토요일 오후 1시 ",
     venue: "경주 더프라미스 웨딩홀",
   },
@@ -59,7 +59,7 @@ export const weddingConfig = {
     mapZoom: "17", // 지도 줌 레벨
     mapNaverCoordinates: "129.2908045,35.8250959,15,0,0,0,dh", // 네이버 지도 길찾기 URL용 좌표 파라미터 (경주시 보불로 391)
     transportation: {
-      bus: "셔틀버스 KTX 경주역 ⇄ 웨딩홀 \n - 가는편: 오후 12:00 \n - 오는편: 오후 2:30",
+      bus: "셔틀버스 KTX 경주역 ⇄ 웨딩홀 \n\n - 가는편: 오후 12:00 \n    - 탑승 위치: KTX 출구 옆 버스 정류장(시내버스 정류장 옆) \n\n - 오는편: 오후 2:30~3:00 \n    - 탑승 위치: 하차 위치",
     },
     parking: "건물 주차장(2~5F) 이용 가능",
     // 신랑측 배차 안내
@@ -96,17 +96,6 @@ export const weddingConfig = {
       "/images/gallery/7.jpg",
       "/images/gallery/8.jpg",
       "/images/gallery/9.jpg",
-      "/images/gallery/10.jpg",
-      "/images/gallery/11.jpg",
-      "/images/gallery/12.jpg",
-      "/images/gallery/13.jpg",
-      "/images/gallery/14.jpg",
-      "/images/gallery/15.jpg",
-      "/images/gallery/16.jpg",
-      "/images/gallery/17.jpg",
-      "/images/gallery/18.jpg",
-      "/images/gallery/19.jpg",
-      "/images/gallery/20.jpg",
     ],
   } as GalleryConfig,
 

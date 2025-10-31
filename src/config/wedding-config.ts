@@ -121,7 +121,7 @@ export const weddingConfig = {
   account: {
     groom: {
       bank: "카카오뱅크",
-      number: "3333-02-04431819",
+      number: "3333-02-4431819",
       holder: "",
     },
     bride: {
